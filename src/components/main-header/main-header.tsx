@@ -1,16 +1,22 @@
-'use client'
 import Image from "next/image"
 import Link from "next/link"
 import { MainHeaderBg } from "./main-header-bg"
 import logoImg from '@/assets/logo.png'
+
 import styles from './main-header.module.css'
+import { NavLink } from "./nav-link"
+
+
 
 export const MainHeader = () => {
+
+
+
     return (
         <>
             <MainHeaderBg />
-            <header className={ styles.header }>
-                <Link href="/" className={ styles.logo }>
+            <header className={styles.header}>
+                <Link href="/" className={styles.logo}>
                     <Image
                         // src={'/images/logo.png'}
                         src={logoImg}
@@ -21,13 +27,17 @@ export const MainHeader = () => {
                     />
                     NextLevel Food
                 </Link>
-                <nav className={ styles.nav }>
+                <nav className={styles.nav}>
                     <ul>
                         <li>
-                            <Link href="/meals">Brouse Meals</Link>
+                            <NavLink href="/meals" >
+                                Brouse Meals
+                            </NavLink>
                         </li>
                         <li>
-                            <Link href="/community">Community</Link>
+                            <NavLink  href="/community" >
+                                Community
+                            </NavLink>
                         </li>
                     </ul>
                 </nav>
